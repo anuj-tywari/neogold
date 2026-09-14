@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Abstract geometric shapes with gold gradients -->
+  <defs>
+    <linearGradient id="goldGradient1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5D485"/>
+      <stop offset="50%" stop-color="#E6B325"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="goldGradient2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#E6B325"/>
+      <stop offset="100%" stop-color="#DAA520"/>
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#352961"/>
+      <stop offset="100%" stop-color="#774181"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Elements -->
+  <rect x="0" y="0" width="600" height="400" fill="#ffffff" opacity="0.8"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="500" cy="80" r="60" fill="url(#goldGradient1)" opacity="0.7"/>
+  <path d="M520 300 L580 350 L540 390 L480 340 Z" fill="url(#goldGradient2)" opacity="0.6"/>
+  <path d="M120 50 L180 100 L140 140 L80 90 Z" fill="url(#goldGradient1)" opacity="0.5"/>
+  <circle cx="100" cy="320" r="70" fill="url(#purpleGradient)" opacity="0.3"/>
+  
+  <!-- Connecting Lines -->
+  <path d="M200 170 L400 230" stroke="#D4AF37" stroke-width="2" opacity="0.4"/>
+  <path d="M150 240 L350 300" stroke="#D4AF37" stroke-width="2" opacity="0.4"/>
+  <path d="M250 100 L450 160" stroke="#D4AF37" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Small Decorative Dots -->
+  <circle cx="200" cy="170" r="5" fill="#D4AF37"/>
+  <circle cx="400" cy="230" r="5" fill="#D4AF37"/>
+  <circle cx="150" cy="240" r="5" fill="#D4AF37"/>
+  <circle cx="350" cy="300" r="5" fill="#D4AF37"/>
+  <circle cx="250" cy="100" r="5" fill="#D4AF37"/>
+  <circle cx="450" cy="160" r="5" fill="#D4AF37"/>
+</svg> 

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Gold Gradients and Effects -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" /> <!-- bright gold -->
+      <stop offset="100%" style="stop-color:#FFC107;stop-opacity:1" /> <!-- warmer gold -->
+    </linearGradient>
+    <linearGradient id="goldBackgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D76E;stop-opacity:0.3" /> <!-- light gold, semi-transparent -->
+      <stop offset="100%" style="stop-color:#F1C40F;stop-opacity:0.2" /> <!-- darker gold, more transparent -->
+    </linearGradient>
+    <filter id="goldShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="0" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main Circle with subtle gold background -->
+  <circle cx="100" cy="100" r="90" fill="url(#goldBackgroundGradient)" stroke="#FFD700" stroke-width="2" />
+  
+  <!-- Stylized N in gold -->
+  <g filter="url(#goldShadow)">
+    <!-- First part of N (left vertical) -->
+    <path d="M60,55 L60,145" stroke="url(#goldGradient)" stroke-width="16" stroke-linecap="round" />
+    
+    <!-- Diagonal of N -->
+    <path d="M60,55 L140,145" stroke="url(#goldGradient)" stroke-width="16" stroke-linecap="round" />
+    
+    <!-- Right vertical of N -->
+    <path d="M140,55 L140,145" stroke="url(#goldGradient)" stroke-width="16" stroke-linecap="round" />
+    
+    <!-- Gold Dot (more prominent than original) -->
+    <circle cx="140" cy="55" r="12" fill="#FFD700" />
+    <circle cx="140" cy="55" r="8" fill="#FFC107" /> <!-- Inner detail -->
+  </g>
+  
+  <!-- Light accents for dimension -->
+  <circle cx="60" cy="55" r="8" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="60" cy="145" r="8" fill="#FFFFFF" opacity="0.7" />
+  
+  <!-- Additional gold sparkle effects -->
+  <circle cx="100" cy="100" r="2" fill="#FFFFFF" opacity="0.9" />
+  <circle cx="120" cy="80" r="1.5" fill="#FFFFFF" opacity="0.8" />
+  <circle cx="80" cy="120" r="1.5" fill="#FFFFFF" opacity="0.8" />
+  
+  <!-- Gold shine effect across the logo -->
+  <path d="M40,40 L160,160" stroke="#FFFFFF" stroke-width="1" opacity="0.4" />
+  <path d="M160,40 L40,160" stroke="#FFFFFF" stroke-width="1" opacity="0.3" />
+</svg> 

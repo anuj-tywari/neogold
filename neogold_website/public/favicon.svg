@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Gold Gradients and Effects -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFC107;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldBackgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D76E;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#F1C40F;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Circle with subtle gold background -->
+  <circle cx="16" cy="16" r="15" fill="url(#goldBackgroundGradient)" stroke="#FFD700" stroke-width="0.5" />
+  
+  <!-- Stylized N in gold - simplified for small display -->
+  <path d="M10,9 L10,23" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M10,9 L22,23" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M22,9 L22,23" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
+  
+  <!-- Gold Dot (more prominent than original) -->
+  <circle cx="22" cy="9" r="2" fill="#FFD700" />
+</svg> 

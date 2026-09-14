@@ -1,0 +1,27 @@
+<svg width="1440" height="320" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="waveGradient" x1="0" y1="0" x2="1440" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#352961"/>
+      <stop offset="50%" stop-color="#774181"/>
+      <stop offset="100%" stop-color="#5F226A"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0" y1="0" x2="1440" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#DAA520" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#B8860B" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Wave -->
+  <path d="M0,224L48,208C96,192,192,160,288,144C384,128,480,128,576,160C672,192,768,256,864,272C960,288,1056,256,1152,224C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="url(#waveGradient)"/>
+  
+  <!-- Gold Accent Wave -->
+  <path d="M0,288L48,272C96,256,192,224,288,208C384,192,480,192,576,224C672,256,768,320,864,320C960,320,1056,256,1152,224C1248,192,1344,192,1392,224L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="url(#goldAccent)" opacity="0.6"/>
+  
+  <!-- Small decorative circles -->
+  <circle cx="200" cy="180" r="3" fill="#FFD700" opacity="0.6"/>
+  <circle cx="480" cy="220" r="2" fill="#FFD700" opacity="0.6"/>
+  <circle cx="720" cy="160" r="4" fill="#FFD700" opacity="0.6"/>
+  <circle cx="950" cy="200" r="3" fill="#FFD700" opacity="0.6"/>
+  <circle cx="1200" cy="180" r="2" fill="#FFD700" opacity="0.6"/>
+</svg> 

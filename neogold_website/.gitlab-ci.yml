@@ -1,0 +1,62 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  # defaults you don’t need to set in the UI
+  SSH_PORT:       "22"
+  DEPLOY_PATH:    "/var/www/newgold_website"
+  PM2_PROCESS:    "newgold_website"
+
+build_job:
+  stage: build
+  image: node:18.17.0
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+      - .next/
+      - node_modules/
+      - package.json
+      - package-lock.json
+      - public/
+      - next.config.js
+    expire_in: 1h
+  only:
+    - dev
+
+deploy_job:
+  stage: deploy
+  image: ubuntu:22.04    # or ubuntu:latest
+
+  before_script:
+    # 1) Install SSH & rsync
+    - apt-get update -qq
+    - apt-get install -y -qq openssh-client rsync
+
+    # 2) Write your private key to disk
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/gitlab_deploy
+    - chmod 600 ~/.ssh/gitlab_deploy
+
+    # 3) Pre‑trust your EC2 host key
+    - ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    # 4) Upload the build directory
+    - scp -i ~/.ssh/gitlab_deploy -o StrictHostKeyChecking=no \
+        -r build/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH"
+
+    # 5) SSH in (using -i) and reload PM2 + Nginx
+    - ssh -i ~/.ssh/gitlab_deploy -o StrictHostKeyChecking=no \
+        "$SSH_USER@$SSH_HOST" << 'EOF'
+          cd "$DEPLOY_PATH"
+          pm2 reload "$PM2_PROCESS" || pm2 start npm --name "$PM2_PROCESS" -- start
+          sudo nginx -s reload
+        EOF
+
+  only:
+    - dev
